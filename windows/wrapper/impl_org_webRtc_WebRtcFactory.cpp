@@ -370,8 +370,8 @@ void WrapperImplType::internalSetup() noexcept
       RTC_FROM_HERE, [audioCapturingEnabled, audioRenderingEnabled]() {
       webrtc::IAudioDeviceWasapi::CreationProperties props;
       props.id_ = "";
-      props.playoutEnabled_ = audioCapturingEnabled;
-      props.recordingEnabled_ = audioRenderingEnabled;
+      props.playoutEnabled_ = audioRenderingEnabled;
+      props.recordingEnabled_ = audioCapturingEnabled;
       return rtc::scoped_refptr<::webrtc::AudioDeviceModule>(webrtc::IAudioDeviceWasapi::create(props));
     });
   }
